@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-colors;
+  }
+  
+  .btn-primary {
+    @apply bg-blue-600 text-white hover:bg-blue-700;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-100 text-gray-700 hover:bg-gray-200;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-200;
+  }
+  
+  .input {
+    @apply px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent;
+  }
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Loading spinner */
+.spinner {
+  @apply animate-spin rounded-full border-2 border-gray-300 border-t-blue-600;
+}
+
+/* Status indicators */
+.status-processing {
+  @apply bg-yellow-100 text-yellow-800;
+}
+
+.status-ready {
+  @apply bg-green-100 text-green-800;
+}
+
+.status-contacted {
+  @apply bg-blue-100 text-blue-800;
+}
+
+.status-replied {
+  @apply bg-purple-100 text-purple-800;
+}
+
+.status-error {
+  @apply bg-red-100 text-red-800;
+}
+
+/* Progress bars */
+.progress-bar {
+  @apply bg-gray-200 rounded-full overflow-hidden;
+}
+
+.progress-fill {
+  @apply h-full bg-blue-600 transition-all duration-300;
+}
+
+/* Hover effects */
+.hover-lift {
+  @apply transition-transform duration-200 hover:-translate-y-1;
+}
+
+.hover-scale {
+  @apply transition-transform duration-200 hover:scale-105;
+}
+
+/* Focus styles */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+}
+
+/* Responsive utilities */
+@screen sm {
+  .container {
+    @apply max-w-screen-sm;
+  }
+}
+
+@screen md {
+  .container {
+    @apply max-w-screen-md;
+  }
+}
+
+@screen lg {
+  .container {
+    @apply max-w-screen-lg;
+  }
+}
+
+@screen xl {
+  .container {
+    @apply max-w-screen-xl;
+  }
+}
